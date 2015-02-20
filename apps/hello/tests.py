@@ -11,7 +11,7 @@ class MainPageViewTests(TestCase):
 
     def test_index_view_show_stored_person_name(self):
         pi = PersonInfo.objects.all()[0]
-        pi.name = "Alex"
+        pi.first_name = "Alex"
         pi.save()
         response = self.client.get(reverse('hello:index'))
         self.assertContains(response, "Alex")
