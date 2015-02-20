@@ -1,6 +1,18 @@
 from django.test import TestCase
+from django.core.urlresolvers import reverse
+from models import PersonInfo
+
 
 # Create your tests here.
-class SomeTests(TestCase):
-    def test_math(self):
-        assert(2+2==5)
+class MainPageViewTests(TestCase):
+    def test_index_view(self):
+        response = self.client.get(reverse('hello:index'))
+        self.assertContains(response, "Bio")
+        self.assertContains(response, "Contacts")
+
+    def test_index_view_show_stored_person_name(self):
+        pi = PersonInfo.objects.all()[0]
+        pi.first_name = "Alex"
+        pi.save()
+        response = self.client.get(reverse('hello:index'))
+        self.assertContains(response, "Alex")

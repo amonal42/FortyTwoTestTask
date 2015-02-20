@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'hello/css/style.css' %}" media="screen, projection"/>
+{% endblock %}
+
+{% block content %}
+    <div id="leftcol">
+        <p>{{info.first_name}}</p>
+        <p>{{info.last_name}}</p>
+        <p>{{info.date_of_birth}}</p>
+        <p>
+            Bio:<br>
+            {{info.bio|linebreaksbr}}
+        </p>
+    </div>
+    <div id="rightcol">
+        <p>Contacts</p>
+        <p>Email: {{info.email}}</p>
+        <p>Jabber: {{info.jabber}}</p>
+        <p>Skype: {{info.skype}}</p>
+        <p>
+            Other contacts:<br>
+            {{info.other_contacts|linebreaksbr}}
+        </p>        
+    </div>
+{% endblock %}

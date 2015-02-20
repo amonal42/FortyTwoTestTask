@@ -1,0 +1,8 @@
+#leftcol { 
+  float: left; 
+  width: 48%; 
+}
+#rightcol { 
+  margin-left: 52%; 
+  width: 48%; 
+}
