@@ -14,4 +14,4 @@ class PersonInfo(models.Model):
     other_contacts = models.TextField(blank=True)
 
     def __str__(self):
-	return " ".join((self.first_name, self.last_name))
+        return " ".join((self.first_name, self.last_name))

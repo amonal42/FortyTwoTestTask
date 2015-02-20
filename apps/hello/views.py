@@ -5,6 +5,5 @@ import models
 
 
 def index(request):
-    return render(request, 'hello/index.html', {"info" : models.PersonInfo.objects.all()[0]})
-
-
+    return render(request, 'hello/index.html',
+                  {"info" : models.PersonInfo.objects.all()[0]})

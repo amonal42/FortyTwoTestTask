@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.core.urlresolvers import reverse
 from models import PersonInfo
 
+
 # Create your tests here.
 class MainPageViewTests(TestCase):
     def test_index_view(self):
